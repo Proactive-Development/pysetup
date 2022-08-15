@@ -5,12 +5,12 @@ from colorama import Back, Fore, Style
 import requests
 if __name__ == "__main__":
     if len(sys.argv) == 1:
-        print("Enter a setup file to install")
+        print("Enter a setup file to install using an argument")
         exit()
     config_path = sys.argv[-1]
     config = configparser.ConfigParser()
     config.read(config_path)
-    print(Fore.CYAN+"The program named "+Fore.WHITE+config["setup"]["name"]+Fore.CYAN+" wants to install their software onto your computer")
+    print(Fore.CYAN+"The software named "+Fore.WHITE+config["setup"]["name"]+Fore.CYAN+" wants to install their software onto your computer")
     if config["setup"]["beta"] == "False":
         print(Fore.CYAN+"Version: "+Fore.GREEN+config["setup"]["version"]+" STABLE"+Style.RESET_ALL)
     else:
